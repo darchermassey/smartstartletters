@@ -1,0 +1,61 @@
+# robots.txt for healthify.nz
+# Goal: Invite AI Search/Citations while Blocking AI Model Training
+
+# ----- GLOBAL RULES -----
+User-agent: *
+Disallow: /admin/
+Disallow: /dev/
+Disallow: /Security/
+Disallow: /api/
+Disallow: /health/check/
+Disallow: /CMSSecurity/
+Disallow: /SapphireInfo/
+Disallow: /SapphireREPL/
+Disallow: /UserDefinedFormController/
+Disallow: /search/
+
+# ----- CRAWL RATE -----
+User-agent: Swiftbot
+Crawl-delay: 10
+
+# ----- AI SEARCH BOTS (INVITED) -----
+# These bots provide real-time citations and links in AI answers.
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# ----- AI TRAINING BOTS (BLOCKED) -----
+# These bots scrape data to train models but don't send traffic back.
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+# ----- SITEMAP -----
+Sitemap: https://healthify.nz/sitemap.xml
